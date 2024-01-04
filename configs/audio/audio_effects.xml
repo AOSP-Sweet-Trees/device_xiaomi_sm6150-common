@@ -49,6 +49,7 @@
 	<!--Spatial Audio-->
         <library name="spatializer" path="libspatialaudio.so"/>
         <library name="dap_sw" path="libswdap.so"/>
+        <library name="ozo_processing" path="libozoprocessing.so"/>
         <library name="dap_hw" path="libhwdap.so"/>
         <library name="gamedap" path="libswgamedap.so"/>
     </libraries>
@@ -103,6 +104,7 @@
 
 	<!--Spatial Audio-->
         <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
+	<effect name="ozo" library="ozo_processing" uuid="7e384a3b-7850-4a64-a097-884250d8a737"/>
 	<effectProxy name="dap" library="proxy" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa">
             <libsw library="dap_sw" uuid="6ab06da4-c516-4611-8166-452799218539"/>
             <libhw library="dap_hw" uuid="a0c30891-8246-4aef-b8ad-d53e26da0253"/>
