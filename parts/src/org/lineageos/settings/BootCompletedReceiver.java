@@ -26,6 +26,7 @@ import android.util.Log;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.dolby.DolbyUtils;
+import org.lineageos.settings.gestures.GestureUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.haptic.HapticUtils;
 import org.lineageos.settings.utils.FileUtils;
@@ -68,5 +69,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
         boolean hbmEnabled = sharedPrefs.getBoolean(HBM_ENABLE_KEY, false);
         FileUtils.writeLine(HBM_NODE, hbmEnabled ? "1" : "0");
+
+        // Gesture: Double tap FPS
+        if (GestureUtils.isFpDoubleTapEnabled(context)) {
+            GestureUtils.setFingerprintNavigation(true);
+        }
     }
 }
